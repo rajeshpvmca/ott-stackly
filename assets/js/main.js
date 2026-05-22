@@ -196,104 +196,12 @@ async function loadComponents() {
       // =========================
       // PLAY BUTTON
       // =========================
-      if (mPlayBtn && mVideo) {
+      if (mPlayBtn) {
 
         mPlayBtn.addEventListener("click", (e) => {
 
           e.stopPropagation();
-
-          // Current Playing Video
-          const currentPlaying =
-            document.querySelector(
-              '.movie-video[data-playing="true"]'
-            );
-
-          // =========================
-          // STOP PREVIOUS VIDEO
-          // =========================
-          if (
-            currentPlaying &&
-            currentPlaying !== mVideo
-          ) {
-
-            currentPlaying.pause();
-
-            currentPlaying.currentTime = 0;
-
-            currentPlaying.muted = true;
-
-            currentPlaying.style.opacity = "0";
-
-            currentPlaying.removeAttribute("data-playing");
-
-            const prevBtn =
-              currentPlaying
-              .closest(".movie-card")
-              .querySelector(".play-btn");
-
-            if (prevBtn) {
-
-              prevBtn.innerHTML =
-                '<i class="bi bi-play-fill"></i>';
-
-            }
-
-          }
-
-          // =========================
-          // PLAY VIDEO
-          // =========================
-          if (
-            !mVideo.hasAttribute("data-playing")
-          ) {
-
-            mVideo.play();
-
-            mVideo.muted = false;
-
-            mVideo.style.opacity = "1";
-
-            mVideo.setAttribute(
-              "data-playing",
-              "true"
-            );
-
-            mPlayBtn.innerHTML =
-              '<i class="bi bi-pause-fill"></i>';
-
-            if (currentSwiper) {
-
-              currentSwiper.autoplay.stop();
-
-            }
-
-          }
-
-          // =========================
-          // PAUSE VIDEO
-          // =========================
-          else {
-
-            mVideo.pause();
-
-            mVideo.currentTime = 0;
-
-            mVideo.muted = true;
-
-            mVideo.removeAttribute("data-playing");
-
-            mVideo.style.opacity = "0";
-
-            mPlayBtn.innerHTML =
-              '<i class="bi bi-play-fill"></i>';
-
-            if (currentSwiper) {
-
-              currentSwiper.autoplay.start();
-
-            }
-
-          }
+          window.location.href = "404.html";
 
         });
 
