@@ -106,9 +106,13 @@ async function loadComponents() {
           slidesPerView: 3,
         },
 
-        992: {
-          slidesPerView: 4,
+        1024: {
+            slidesPerView: 4,
         },
+
+        1200: {
+            slidesPerView: 4,
+        }
 
       },
 
